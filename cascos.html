@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cascos | MB Wheels</title>
+
+<style>
+/* ========================
+   RESET GENERAL
+======================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================
+   ANIMACIÓN DE ENTRADA SEGURA
+======================== */
+.page {
+  animation: fadeInPage 0.6s ease;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================
+   HEADER
+======================== */
+header {
+  background: #000;
+  padding: 30px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #7bc043;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* ========================
+   CATÁLOGO
+======================== */
+.catalogo {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* ========================
+   PRODUCTO (CARD)
+======================== */
+.producto {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Elevación + rebote */
+.producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.6);
+  animation: softBounce 0.35s ease;
+}
+
+@keyframes softBounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Imagen */
+.producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.producto:hover img {
+  transform: scale(1.06);
+}
+
+/* Texto */
+.producto h3,
+.producto p {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.producto h3 {
+  margin: 15px 0 5px;
+  color: #7bc043;
+}
+
+.producto p {
+  margin-bottom: 15px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.producto:hover h3 {
+  transform: translateY(-2px);
+}
+
+.producto:hover p {
+  transform: translateY(-3px);
+  color: #eee;
+}
+
+/* Borde luminoso sutil */
+.producto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 0 rgba(123,192,67,0);
+  transition: box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+.producto:hover::after {
+  box-shadow: 0 0 18px rgba(123,192,67,0.25);
+}
+
+/* ========================
+   BOTÓN VOLVER
+======================== */
+.volver {
+  display: block;
+  width: fit-content;
+  margin: 50px auto;
+  padding: 10px 20px;
+  border: 2px solid #7bc043;
+  border-radius: 8px;
+  color: #7bc043;
+  font-weight: bold;
+}
+
+.volver:hover {
+  background: #7bc043;
+  color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <header>
+    <h1>CASCOS</h1>
+    <p>Todos nuestros cascos disponibles</p>
+  </header>
+
+  
+<section class="catalogo">
+
+  <!-- CASCO INTEGRAL -->
+  <a href="producto_casco_integral.html" class="producto">
+    <img src="img/casco1.jpg" alt="Casco Integral">
+    <h3>Casco Integral</h3>
+    <p>Nuevo · Homologado</p>
+  </a>
+
+  <!-- CASCO URBANO -->
+  <a href="producto_casco_urbano.html" class="producto">
+    <img src="img/casco.jpg" alt="Casco Urbano">
+    <h3>Casco Urbano</h3>
+    <p>Usado · Excelente estado</p>
+  </a>
+
+  <!-- CASCO MOTOCROSS -->
+  <a href="producto_casco_motocross.html" class="producto">
+    <img src="img/casco2.jpg" alt="Casco Motocross">
+    <h3>Casco Motocross</h3>
+    <p>Nuevo · Off-road</p>
+  </a>
+
+</section>
+
+
+  <a href="index2.html" class="volver">← Volver al inicio</a>
+
+</div>
+
+</body>
+</html>

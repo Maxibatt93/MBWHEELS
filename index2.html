@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>MB Wheels</title>
+
+<style>
+/* ========================
+   RESET GENERAL
+======================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================
+   ANIMACIÓN LIMPIA DE ENTRADA
+======================== */
+.page {
+  animation: fadeInPage 0.6s ease;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================
+   HERO / BANNER
+======================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay oscuro (NO bloquea clicks) */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0)
+  );
+  pointer-events: none;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: #7bc043;
+}
+
+.logo p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+/* ========================
+   CATEGORÍAS
+======================== */
+.productos {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.productos h2 {
+  text-align: center;
+  color: #7bc043;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* ========================
+   CARD (BOTÓN)
+======================== */
+.card {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Hover elevación */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.65);
+}
+
+/* ========================
+   MICRO‑ANIMACIONES (OPCIÓN C)
+======================== */
+
+/* Rebote suave */
+.card:hover {
+  animation: softBounce 0.35s ease;
+}
+
+@keyframes softBounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Imagen */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover img {
+  transform: scale(1.06);
+}
+
+/* Texto */
+.card h3,
+.card p {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card h3 {
+  margin: 15px 0 5px;
+  color: #7bc043;
+}
+
+.card p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.card:hover h3 {
+  transform: translateY(-2px);
+}
+
+.card:hover p {
+  transform: translateY(-3px);
+  color: #eee;
+}
+
+/* Borde luminoso sutil */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 0 rgba(123, 192, 67, 0);
+  transition: box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  box-shadow: 0 0 18px rgba(123, 192, 67, 0.25);
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="img/banner.jpg" alt="MB Wheels banner">
+
+    <div class="overlay"></div>
+
+    <div class="logo">
+      <h1>MB WHEELS</h1>
+      <p>Bicis y Motos · Indumentaria nueva y usada</p>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="productos">
+    <h2>Categorías</h2>
+
+    <div class="grid">
+
+      <a href="cascos.html" class="card">
+        <img src="img/casco.jpg" alt="Cascos">
+        <h3>Cascos</h3>
+        <p>Ver catálogo</p>
+      </a>
+
+      <a href="bicicletas.html" class="card">
+        <img src="img/mtb.jpg" alt="Bicicletas">
+        <h3>Bicicletas</h3>
+        <p>Ver catálogo</p>
+      </a>
+
+      <a href="indumentaria.html" class="card">
+        <img src="img/campera.jpg" alt="Indumentaria">
+        <h3>Indumentaria</h3>
+        <p>Ver catálogo</p>
+      </a>
+
+      <a href="motos.html" class="card">
+        <img src="img/moto.jpg" alt="Motos">
+        <h3>Motos</h3>
+        <p>Ver catálogo</p>
+      </a>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Siempre volver arriba al entrar al home
+  window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+  });
+</script>
+
+</body>
+</html>
