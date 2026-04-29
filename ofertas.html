@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ofertas | MB Wheels</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #111;
+      --bg-card: #1a1a1a;
+      --green-main: #7bc043;
+      --text-main: #fff;
+      --text-muted: #ccc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg-main);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-main);
+      padding-top: 44px;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* =================================================
+       HEADER TRANSLÚCIDO
+    ================================================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 44px;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px) saturate(120%);
+      -webkit-backdrop-filter: blur(12px) saturate(120%);
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .header-left {
+      position: absolute;
+      left: 14px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .header-btn {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .header-btn:hover {
+      background: var(--green-main);
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    /* =================================================
+       TITULO
+    ================================================= */
+    .hero {
+      padding: 50px 20px 30px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+    }
+
+    /* =================================================
+       GRID DE PRODUCTOS
+    ================================================= */
+    .productos {
+      max-width: 1100px;
+      margin: 40px auto 80px;
+      padding: 0 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--green-main);
+      font-size: 17px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .price del {
+      color: #aaa;
+      margin-right: 6px;
+      font-size: 14px;
+    }
+
+    /* ETIQUETA OFERTA */
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #e53935;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* BOTÓN WHATSAPP */
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25d366;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="#" class="header-btn" onclick="history.back(); return false;">← Volver</a>
+      <a href="index2.html" class="header-btn">Inicio</a>
+    </div>
+  </header>
+
+  <!-- TITULO -->
+  <section class="hero">
+    <h1>🔥 Ofertas</h1>
+    <p>Productos seleccionados con precios especiales</p>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="productos">
+    <div class="grid">
+
+      <!-- PRODUCTO 1 -->
+      <div class="card">
+        <span class="badge">-30%</span>
+        <img src="img/oferta-casco.jpg" alt="Casco Integral LS2">
+
+        <div class="card-content">
+          <h3>Casco Integral LS2</h3>
+          <div class="price">
+            <del>$180.000</del> $125.000
+          </div>
+
+          <a
+            href="https://wa.me/5493564594940?text=Hola%20MB%20Wheels!%20Quisiera%20consultar%20por%20el%20Casco%20Integral%20LS2%20en%20oferta."
+            target="_blank"
+            class="btn-whatsapp"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2 -->
+      <div class="card">
+        <span class="badge">-20%</span>
+        <img src="img/oferta-guantes.jpg" alt="Guantes Touring">
+
+        <div class="card-content">
+          <h3>Guantes Touring</h3>
+          <div class="price">
+            <del>$45.000</del> $36.000
+          </div>
+
+          <a
+            href="https://wa.me/5493564594940?text=Hola%20MB%20Wheels!%20Me%20interesan%20los%20Guantes%20Touring%20que%20vi%20en%20ofertas."
+            target="_blank"
+            class="btn-whatsapp"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- ✅ AGREGÁS MÁS PRODUCTOS COPIANDO ESTE BLOQUE -->
+
+    </div>
+  </section>
+
+</body>
+</html>
